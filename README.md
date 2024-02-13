@@ -1,3 +1,13 @@
+Purpose of the fork:
+
+I just added some clients to the filter "e.g anacrolix" and I added an add_to_startup.py which will create a .cmd script running the filter.py script.
+
+## add_to_startup.py instructions
+1. move *filter.py* wherever you want to store it
+2. cd into to the folder where *filter.py* is
+3. run add_to_startup.py from there and it will be added to startup
+4. To remove the script from being run at startup simply go to %APPDATA%/Microsoft/Windows/Startup and remove *torrent_filter.cmd*
+
 中文往下翻
 
 # btDownloadManager
