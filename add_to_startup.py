@@ -1,25 +1,26 @@
 import os
+from win32com.client import Dispatch
 
-def create_startup_script():
+def create_startup_shortcut():
+    # Get the current working directory
     cwd = os.getcwd()
     
     # Path to the Python script
-    python_script_path = os.path.join(cwd, 'filter.py')
-    
-    # Content for the CMD file
-    cmd_content = 'python "{}"\n'.format(python_script_path)
+    python_script_path = os.path.join(cwd, 'filter.pyw')
     
     # Path to the startup directory
     startup_dir = os.path.join(os.getenv('APPDATA'), 'Microsoft', 'Windows', 'Start Menu', 'Programs', 'Startup')
     
-    # Path to the CMD file in the startup directory
-    cmd_file_path = os.path.join(startup_dir, 'torrent_filter.cmd')
+    # Path to save the shortcut
+    shortcut_path = os.path.join(startup_dir, 'torrent_filter.lnk')
     
-    # Write content to the CMD file
-    with open(cmd_file_path, 'w') as cmd_file:
-        cmd_file.write(cmd_content)
+    # Create a shortcut to the Python script in the Startup directory
+    shell = Dispatch('WScript.Shell')
+    shortcut = shell.CreateShortCut(shortcut_path)
+    shortcut.Targetpath = python_script_path
+    shortcut.save()
     
-    print("Startup script created successfully!")
+    print("Startup shortcut created successfully!")
 
 if __name__ == "__main__":
-    create_startup_script()
+    create_startup_shortcut()

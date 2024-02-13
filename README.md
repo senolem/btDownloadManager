@@ -1,12 +1,14 @@
 Purpose of the fork:
 
-I just added some clients to the filter "e.g anacrolix" and I added an add_to_startup.py which will create a .cmd script running the filter.py script.
+First, I renamed filter.py to filter.pyw so it can run in background, feel free to switch it back and edit *add_to_startup.py* accordingly
+I just added some clients to the filter "e.g anacrolix" and I added an add_to_startup.py which will create shortcut running the filter.pyw script.
 
 ## add_to_startup.py instructions
-1. move *filter.py* wherever you want to store it
-2. cd into to the folder where *filter.py* is
+0. run *pip install winshell*
+1. move *filter.pyw* wherever you want to store it
+2. cd into to the folder where *filter.pyw* is
 3. run add_to_startup.py from there and it will be added to startup
-4. To remove the script from being run at startup simply go to %APPDATA%/Microsoft/Windows/Start Menu/Programs/Startup and remove *torrent_filter.cmd*
+4. To remove the script from being run at startup simply go to %APPDATA%/Microsoft/Windows/Start Menu/Programs/Startup and remove *torrent_filter*
 
 中文往下翻
 
