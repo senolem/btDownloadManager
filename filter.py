@@ -72,7 +72,7 @@ class ClientFilter:
             print(str(e) + "\n input File error")
             exit(0)
         else:
-            self.string_list = ['XL0012', 'Xunlei', 'dandan']
+            self.string_list = ['XL0012', 'Xunlei', 'dandan', 'Xfplay', 'QQ', 'anacrolix']
             #self.string_list = ['XL0012', 'Xunlei', 'dandan', 'Xfplay']
 
         print('connecting to server ' + self.url_port)
